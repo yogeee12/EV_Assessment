@@ -24,12 +24,17 @@ def even_no(li):
     return even_li
 
 li=[45,6,5,8,4,5,8,65,1,556,4]
-# print(even_no(li))
+print(even_no(li))
 
 def dic_student():
     student= {"Alice":85, "Bob": 92, "Charlie": 78, "David":90}
     student_li = list(sorted(student.items(), key=lambda x :x[1], reverse=True))
     print("Highest Score :-")
     print(f"Name : {student_li[0][0]}\nScore : {student_li[0][1]}")
+
+    #Average score
+    score_li = student.values()
+    avg_score = sum(score_li)/len(score_li)
+    print(f"Average Score : {avg_score}")
 
 dic_student()
