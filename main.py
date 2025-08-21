@@ -2,11 +2,19 @@
 #Even Number 
 import pandas as pd
 
-def even_no(li):
-    return [x for x in li if x%2 == 0]
+def even_no():
+  ask = int(input("Enter length of list : "))
+  li=[]
+  for i in range(ask):
+    num = int(input(f"Enter No. {i+1} : "))
+    if isinstance(num, int):
+      li.append(num)
+    else:
+      print(f"{num} is not int number.")
+  return [x for x in li if x%2 == 0]
 
-e1 = even_no([4,5,7,8,9,5,6])
-# print(e1)
+e1 = even_no()
+print(e1)
 
 #Char count
 def char_count(s:str):
@@ -39,14 +47,14 @@ def file_reader(path):
                     dic[word] += 1
 
             freq_dic = dict(sorted(dic.items(), key= lambda x : x[1], reverse=True))
-            df = pd.DataFrame(list(freq_dic.items()), columns=["Words","Frequency"])
+            df = list(freq_dic.items())[:6]
 
-            return df.iloc[:6]
+            for word, freq in df:
+              print(f"{word} : {freq}")
     except FileNotFoundError:
         return ("File not found, or Check your path.")
 
-f = file_reader(fr"data.txt")
-# print(f)
+file_reader(fr"D:\New folder\EV_Assigments\EV_Assessment\data.txt")
 
 class BankAccount:
   def __init__(self,account_number,amount) -> None:
@@ -70,7 +78,7 @@ class BankAccount:
   def dispaly(self):
     return f"\nAccount Number : {self.account_number}\nCurrent Balance : {self.amount}"
 
-obj1 = BankAccount(242333,10000)
-print(obj1.deposit(5000))
-print(obj1.withdraw(12000))
-print(obj1.dispaly())
+# obj1 = BankAccount(242333,10000)
+# print(obj1.deposit(5000))
+# print(obj1.withdraw(12000))
+# print(obj1.dispaly())
