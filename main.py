@@ -1,7 +1,5 @@
 #Section A:-
 #Even Number 
-import pandas as pd
-
 def even_no():
   ask = int(input("Enter length of list : "))
   li=[]
